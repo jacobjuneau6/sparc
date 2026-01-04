@@ -1,0 +1,13 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s20f0u5u2i5:  # replace with your actual interface
+      dhcp4: false
+  bridges:
+    br0:
+      interfaces: [enp0s20f0u5u2i5]
+      addresses: [192.168.42.89/24]   # your current static IP
+      gateway4: 192.168.42.254           # your default gateway
+      nameservers:
+        addresses: [8.8.8.8]
